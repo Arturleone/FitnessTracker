@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">FitnessTracker</string>
+    <string name="ImcDescription">O Índice de Massa Corporal (IMC) é uma das principais ferramentas, adotada inclusive pela Organização Mundial de Saúde (OMS), para calcular o chamado “peso ideal”. Obtido a partir do peso e da altura do indivíduo, o IMC também aponta níveis de magreza e obesidade, que são usados para nortear o trabalho de profissionais de saúde e de educadores físicos</string>
+    <string name="imc_soverely_low_weight">soyeramente abaixo do peso</string>
+    <string name="imc_very_low_weight">Muito abalxg do peso</string>
+    <string name="imc_law_weight">Abaixg do peso</string>
+    <string name="normal">Normal</string>
+    <string name="imc_high_weight">Agina do peso</string>
+    <string name="imc_so_high_weight">Moderadamente obeso</string>
+    <string name="imc_severely_high_weight">Sevecamente obeso</string>
+    <string name="imc_extrene_weight">Extremanente obeso</string>
+
+    <string name="imc_response">O seu IMC é %1$.2f</string>
+    <string name="label_imc">IMC</string>
+    <string name="label_TMB">TMB</string>
+</resources>
