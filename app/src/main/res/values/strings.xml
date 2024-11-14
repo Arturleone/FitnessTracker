@@ -13,4 +13,6 @@
     <string name="imc_response">O seu IMC é %1$.2f</string>
     <string name="label_imc">IMC</string>
     <string name="label_TMB">TMB</string>
+    <string name="save">Salvar</string>
+    <string name="saved">Salvo Com Sucesso!!</string>
 </resources>

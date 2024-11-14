@@ -45,20 +45,18 @@ class MainActivity : AppCompatActivity(){
             )
         )
 
-        val adapter = MainAdapter(mainItems, object: OnItemClickListener {
-            override fun onClick(id: Int) {
-                when(id) {
-                    1 -> {
-                        val intent = Intent(this@MainActivity, IMCActivity::class.java)
-                        startActivity(intent)
-                    }
+        val adapter = MainAdapter(mainItems) { id ->
+            when (id) {
+                1 -> {
+                    val intent = Intent(this@MainActivity, IMCActivity::class.java)
+                    startActivity(intent)
+                }
 
-                    2-> {
-                        // Abrir outra activity
-                    }
+                2 -> {
+                    // Abrir outra activity
                 }
             }
-        })
+        }
 
         rvMain = findViewById(R.id.rv_main)
         rvMain.adapter = adapter
@@ -73,7 +71,8 @@ class MainActivity : AppCompatActivity(){
 
     private inner class MainAdapter (
         private val mainItems: List<MainItem>,
-        private val onItemClickListener: OnItemClickListener
+//        private val onItemClickListener: OnItemClickListener
+        private val onItemClickListener: (Int) -> Unit
     ): RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
             val view = layoutInflater.inflate(R.layout.main_item, parent, false)
@@ -101,7 +100,7 @@ class MainActivity : AppCompatActivity(){
                 container.setBackgroundColor(item.color)
 
                 container.setOnClickListener {
-                    onItemClickListener.onClick(item.id)
+                    onItemClickListener.invoke(item.id)
                 }
             }
         }

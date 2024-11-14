@@ -14,6 +14,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.fitnesstracker.model.Calc
 
 class IMCActivity : AppCompatActivity() {
 
@@ -50,6 +51,17 @@ class IMCActivity : AppCompatActivity() {
                     .setMessage(imcResponseId)
                     .setPositiveButton(android.R.string.ok) { dialog, which ->
 
+                    }
+                    .setNegativeButton(R.string.save) { dialog, which ->
+                        Thread {
+                            val app = application as App
+                            val dao = app.db.calcDao()
+                            dao.insert(Calc(type = "imc", res = result))
+
+                            runOnUiThread {
+                                Toast.makeText(this@IMCActivity, R.string.saved, Toast.LENGTH_LONG).show()
+                            }
+                        }
                     }
                     .create()
                     .show()
